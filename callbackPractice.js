@@ -107,8 +107,8 @@ uniq(names, function(uniqArr){
     //Code Here 
 function each(arr, callback) {
   for(i = 0; i < arr.lengthl; i++) {
-    callback(arr[i], i)
-  } 
+    var result = callback(arr[i], i)
+  } return result
 }
 
 
