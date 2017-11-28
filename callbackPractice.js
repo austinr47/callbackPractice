@@ -40,7 +40,7 @@ first(names, function(firstName){
   //Code Here
 
 function last(arr, callback){
-  callback([arr.length - 1])
+  return callback(arr[arr.length - 1])
 }
 
 last(names, function(lastName){
@@ -50,10 +50,13 @@ last(names, function(lastName){
 
 
 
-// 3. Write a function called multiply that takes in three parameters: two numbers and a callback function.  Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
+// 3. Write a function called multiply that takes in three parameters: two numbers and a callback function. 
+// Invoke the callback, passing in the product of the two numbers multiplied as the argument. 
 
   //Code Here
-
+function multiply(num1, num2, callback) {
+  return callback(num1 * num2)
+}
 
 multiply(4, 3, function(answer){
   console.log('The answer is ' + answer); //should console.log 12
@@ -61,13 +64,17 @@ multiply(4, 3, function(answer){
 
 
 
-// 4. Write a function called contains that takes in three parameters: an array, a name and a callback.  First, check if the name exists in the array. 
+// 4. Write a function called contains that takes in three parameters: an array, a name and a callback.  
+//First, check if the name exists in the array. 
 // If it does, invoke the callback with true as the argument. 
 // If the name does not exist, invoke the callback with false as the argument.
 
   //Code Here 
 
-
+function contains(arr, name, callback){
+  callback(arr.includes(name))
+  
+}
 
 
 contains(names, 'Colt', function(result){
@@ -84,7 +91,9 @@ contains(names, 'Colt', function(result){
 // Remove any duplicate values from the array, and invoke the callback with the modified array as an argument.
 
   //Code Here
+function uniq(arr, callback) {
 
+}
 
 
 uniq(names, function(uniqArr){
@@ -92,10 +101,15 @@ uniq(names, function(uniqArr){
 });
 
 
-// 6. Write a function called each that takes in an array of names and a callback function. For each name in the array, invoke the callback and pass in the name and the name's index as arguments.
+// 6. Write a function called each that takes in an array of names and a callback function. For each name 
+//in the array, invoke the callback and pass in the name and the name's index as arguments.
 
     //Code Here 
-
+function each(arr, callback) {
+  for(i = 0; i < arr.lengthl; i++) {
+    callback(arr[i], i)
+  }
+}
 
 
 each(names, function(item, indice){
