@@ -108,7 +108,7 @@ uniq(names, function(uniqArr){
 function each(arr, callback) {
   for(i = 0; i < arr.lengthl; i++) {
     callback(arr[i], i)
-  }
+  } 
 }
 
 
@@ -118,7 +118,8 @@ each(names, function(item, indice){
 
 
 
-// 7. Write a function called getUserById that takes in three parameters: an array of objects (users), an id and a callback, and searches for the user with a matching id.
+// 7. Write a function called getUserById that takes in three parameters: an array of objects (users), an id 
+//and a callback, and searches for the user with a matching id.
 // When the correct user object is found, invoke the callback with the user object as an argument.
 
 // Code here
@@ -145,6 +146,14 @@ var users = [
     address: '192 East 32 North'
   },
 ];
+
+function getUserById(arr, arg, callback) {
+  for(i = 0; i < arr.length; i++){
+    if (arr[i].id === arg){
+      return callback(arr[i])
+    }
+}}
+
 
 getUserById(users, '16t', function(user){
   console.log('The user with the id 16t has the email of ' + user.email + ' the name of ' + user.name + ' and the address of ' + user.address); 
